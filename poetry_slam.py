@@ -295,7 +295,18 @@ Select Poem:
     elif choice == 4:
         poem = "RESPECT_her.txt"
     elif choice == 5:
-        poem == "custom_poem.txt"
+        lines = " "
+        for i in range(int(input("How many lines does your poem have?: "))):
+            lines += (input()+"\n")
+        outfile = open("custom_poem.txt", "w")
+        outfile.write(lines)
+        outfile.close
+        outfile = open("custom_poem.txt", "w") ### I don't know why but writing this code twice makes it work
+        outfile.write(lines)
+        outfile.close
+        poem = "custom_poem.txt"
+        
+
     else:
         break
     
