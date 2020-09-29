@@ -268,3 +268,55 @@ print("""
              ▀                                                                     ███    ███ \u001b[0m
 """)
 
+while True:
+    print("""
+Select Poem:
+1. Fine
+2. Word Disassoication
+3. Only the Best
+4. R.E.S.P.E.C.T Her
+5. Custom Poem
+6. Exit
+    """)
+
+    while True:
+        try:
+            choice = int(input("Type 1-6: "))
+            break
+        except ValueError:
+            print("Please enter a number 1-6: ")
+        continue
+    if choice == 1:
+        poem = "fine.txt"
+    elif choice == 2:
+        poem = "word_disassociation.txt"
+    elif choice == 3:
+        poem = "only_the_best.txt"
+    elif choice == 4:
+        poem = "RESPECT_her.txt"
+    elif choice == 5:
+        poem == "custom_poem.txt"
+    else:
+        break
+    
+    print("""
+1. Reverse the Poem
+2. Randomize the Poem
+3. Sort from Longest to Shortest in the Poem
+    """)
+    while True:
+        try:
+            method = int(input("Type 1-3: "))
+            break
+        except ValueError:
+            print("Please enter a number 1-3: ")
+        continue
+    if method == 1:
+        lines_printed_backwards(get_file_lines(poem))
+    if method == 2:
+        lines_printed_random(get_file_lines(poem))
+    if method == 3:
+        lines_printed_custom(get_file_lines(poem))
+
+
+
