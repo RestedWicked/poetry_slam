@@ -1,3 +1,5 @@
+import random
+
 def get_file_lines(filename):
     infile = open(filename ,"r")
 
@@ -16,7 +18,17 @@ def lines_printed_backwards(lines_list):
         poem_list_reversed.append(indexed_line)
     poem_list_reversed.reverse()
     poem = " "
-    return (poem.join(poem_list_reversed))
+    print(poem.join(poem_list_reversed))
 
-print(lines_printed_backwards(get_file_lines("poem.txt")))
+def lines_printed_random(lines_list):
+    poem_list_randomized = []
+    for line in (lines_list):
+        poem_list_randomized.append(line)
+    random.shuffle(poem_list_randomized)
+    poem = " "
+    print(poem.join(poem_list_randomized))
 
+def lines_printed_custom(lines_list):
+    lines_list.sort(key=len, reverse=True)
+    for line in (lines_list):
+        print(line.strip("\n"))
